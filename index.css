@@ -108,6 +108,11 @@ h1 {
   color: white;
 }
 
+.tabHeader > li.active {
+    font-weight: bold;
+    border-bottom: none;
+}
+
 .tabBody{
     height: 200px;
     border-left: 2px solid black;

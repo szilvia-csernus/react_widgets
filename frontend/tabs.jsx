@@ -9,21 +9,33 @@ class Tabs extends React.Component {
 
     handleClick(key) {
         this.setState( { index: key});
+
     }
      
     render() {
+        const activeIdx = this.state.index;
+        const headers = this.props.panes.map((pane, idx) => {
+            const title = pane.title;
+            const cssClass = idx === activeIdx ? 'active' : '';
+            return (
+                <li
+                    key={idx}
+                    className={cssClass}
+                    onClick={() => this.handleClick(idx)}>
+                {title}
+                </li>
+            )
+        });
+
         return (
             <div>
                 <h1>Tabs</h1>
                 <div className="tabContainer">
                     <ul className="tabHeader">
-                        {this.props.panes.map((pane, idx) => (
-                        <li key={idx} onClick={() => this.handleClick(idx)}>
-                            {pane.title}
-                        </li>))}
+                        {headers}
                     </ul>
                     <div className="tabBody">
-                        {this.props.panes[this.state.index].content}
+                        {this.props.panes[activeIdx].content}
                     </div>
                 </div>
             </div>
