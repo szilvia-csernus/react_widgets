@@ -28,7 +28,7 @@ class Clock extends React.Component {
         return (
             <div >
                 <h1>Clock</h1>
-                <div className="clock">
+                <div className="general-frame clock">
                     <p><span>Time:</span> <span>{time.toLocaleTimeString()}</span></p>
                     <p><span>Date:</span> <span>{time.toLocaleDateString()}</span></p>
                 </div>

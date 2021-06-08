@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Clock from './frontend/clock';
 import Tabs from './frontend/tabs';
+import Weather from './frontend/weather';
 
 const panes = [
     { title: 'one', content: 'I am the first' },
@@ -14,10 +15,12 @@ const Root = () => {
     return(
         <div>
             < Clock />
+            < Weather />
             < Tabs panes={panes} />
         </div>
     )
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(<Root />, document.getElementById('main'));
